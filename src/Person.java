@@ -58,5 +58,4 @@ public abstract class Person
 	}
 	
 	
-
-}
+}// end of abstract class person
