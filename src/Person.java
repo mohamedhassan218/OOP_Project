@@ -6,22 +6,13 @@ public abstract class Person
 	private final String nationalNumber;
 	private String address;
 	
-	public Person(String fullName, int age, String nationalNumber, String address) // constructor to initialize the instance variables
+	
+	
+	public Person(String fullName, String nationalNumber) // constructor to initialize the instance variables
 	{
 		this.fullName = fullName;
-		
-		
-		if (age < 18 || age > 60)           // validate the age
-		{
-			throw new IllegalArgumentException("Age must be >= 18 and <= 60!");
-		}
-		
-		this.age = age;
-		
-		
 		this.nationalNumber = nationalNumber;
 		
-		this.address = address;
 	} // end of constructor
 	
 	
@@ -29,6 +20,16 @@ public abstract class Person
 	public String getFullName()
 	{
 		return fullName;
+	}
+	
+	// set the age
+	public void setAge(int age)
+	{
+		if (age > 60 || age < 18)
+		{
+			throw new IllegalArgumentException("The age must be >= 18 and <= 60!");
+		}
+		this.age = age;
 	}
 	
 	// return the age 
@@ -43,6 +44,12 @@ public abstract class Person
 		return nationalNumber;
 	}
 	
+	// set the address
+	public void setAddress(String address)
+	{
+		this.address = address;
+	}
+	
 	// return the address
 	public String getAddress()
 	{
@@ -54,7 +61,7 @@ public abstract class Person
 	@Override
 	public String toString()
 	{
-		return String.format("The name: %s%n%s: %d%n%s: %s%n%s: %s", getFullName(),"Age",getAge(),"National number", getNationalNumber(), "Address", getAddress() );
+		return String.format("%s%n%s: %s%n%s: %d%n%s: %s%n%s: %s","The data of this Person object:", "Name", getFullName(),"Age",getAge(),"National number", getNationalNumber(), "Address", getAddress() );
 	}
 	
 	
