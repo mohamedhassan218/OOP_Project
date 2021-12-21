@@ -39,7 +39,7 @@ public class Worker extends Staff
 	@Override
 	public String toString()
 	{
-		return String.format("%s%n%s%n%s: %s%n%s: %.2f", super.toString(), "This Staff is a worker", "The department", getDepartment(), "The total salary", getTotalSalary());
+		return String.format("%s%n%s%n%s: %s%n%s: %.2f", super.toString(), "This worker  object has", "The department", getDepartment(), "The total salary", getTotalSalary());
 	}
 	
 	
