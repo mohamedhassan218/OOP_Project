@@ -1,7 +1,7 @@
 
 public class Student extends Person 
 {
-	private float gpa;
+	private double gpa;
 	private final String   academicNumber;
 	private final String academicMail;
 	
@@ -17,7 +17,7 @@ public class Student extends Person
 
 
     //set the gpa of the student
-    public void setGpa(float gpa)
+    public void setGpa(double gpa)
     {
        if(gpa > 4 || gpa < 0)
        {
@@ -27,7 +27,7 @@ public class Student extends Person
     }
     
     //return the gpa
-	public float getGpa()
+	public double getGpa()
 	{
 		return gpa;
     }
@@ -51,7 +51,7 @@ public class Student extends Person
 	@Override
 	public String toString()
 	{
-		return String.format("%s%n%s%n%s: %s%n%s: %s%n%s: %s", "The data of this object from class Student:",super.toString(), "Gpa", getGpa(), "Academic number", getAcademicNumber(), "Academic mail", getacAcademicMail());
+		return String.format("%s%n%n%s%n%s: %s%n%s: %s%n%s: %s",super.toString(), "The data of this object from class Student:", "Gpa", getGpa(), "Academic number", getAcademicNumber(), "Academic mail", getacAcademicMail());
 	}
 
 }

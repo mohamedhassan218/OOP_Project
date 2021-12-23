@@ -1,27 +1,15 @@
-import java.util.ArrayList;
 
-public class Adminnistrator 
+public class Adminnistrator extends Staff
 {
 	private int numberOfOfficers;
-	public ArrayList<String> officers = new ArrayList<String>();
 	private String department;
 	
-	// non-argument constructor
-	public Adminnistrator()
-	{
-		
-	}
 	
 	
 	// constructor with arguments
-	public Adminnistrator(int numberOfOfficers,  String departmant)
+	public Adminnistrator(String fullName, String nationalNumber, String loginSecurityNumber )
 	{
-		if (numberOfOfficers  < 5 )
-		{
-			throw new IllegalArgumentException("You should have at least five officers under your resposability!");
-		}
-		this.numberOfOfficers = numberOfOfficers;
-		this.department = departmant;
+		super(fullName, nationalNumber, loginSecurityNumber);
 	}
 	
 	
@@ -60,13 +48,10 @@ public class Adminnistrator
 	}
 	
 	
+	@Override
+	public float getTotalSalary()
+	{
+		return 	getBaseSalary() + (getWorkDays() * 15);
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-
 }

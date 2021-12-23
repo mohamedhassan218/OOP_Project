@@ -6,8 +6,6 @@ public abstract class Person
 	private final String nationalNumber;
 	private String address;
 	
-	
-	
 	public Person(String fullName, String nationalNumber) // constructor to initialize the instance variables
 	{
 		this.fullName = fullName;

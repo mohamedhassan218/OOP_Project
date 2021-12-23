@@ -58,7 +58,7 @@ public abstract class Staff extends Person
 	@Override
 	public String toString()
 	{
-		return String.format("%s%n%s%n%s: %s%n%s: %s%n%s: %.2f", super.toString(),"This staff object has:", "The login security number", getLoginSecurityNumber(), "The number of work days", getWorkDays(), "The base salary", getBaseSalary());
+		return String.format("%s%n%n%s%n%s: %s%n%s: %s%n%s: %.2f", super.toString(),"This staff object has:", "Login security number", getLoginSecurityNumber(), "Number of work days", getWorkDays(), "Base salary", getBaseSalary());
 	}
 	
 	
