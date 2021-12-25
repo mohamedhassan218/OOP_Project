@@ -54,4 +54,9 @@ public class Adminnistrator extends Staff
 		return 	getBaseSalary() + (getWorkDays() * 15);
 	}
 	
+	@Override
+	public String toString()
+	{
+		return String.format("%s%n%n%s%n%s: %d%n%s: %s", super.toString(), "The data of this object of Administrator class is:", "The number of officers", getNumberOfOfficers(), "The department", getDepartment());
+	}
 }

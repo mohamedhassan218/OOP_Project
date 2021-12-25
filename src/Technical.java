@@ -4,14 +4,12 @@ public class Technical extends Staff
 	private int floorNumber;
 	private int labsNumber;
 
-	
 	// constructor
 	public Technical(String fullName, String nationalNumber, String loginSecurityNumber) 
 	{
 		super(fullName, nationalNumber, loginSecurityNumber);
 	}
 	
-		
 	//set the floor number
 	public void setFloorNumber(int floorNumber)
 	{
@@ -22,14 +20,12 @@ public class Technical extends Staff
 		this.floorNumber = floorNumber;
    	}
 		
-		
 	//get the floor number where the technical work
 	public int getFloorNumber ()
 	{
 		return floorNumber ;	
 	}
 	
-		
 	//set the number of labs
 	public void setLabsNumber(int labsNumber)
 	{
@@ -40,14 +36,12 @@ public class Technical extends Staff
 		this.labsNumber = labsNumber;
 	}
 	
-	
 	//get the number of labs
 	public int getLabsNumber()
 	{
 		return labsNumber;
 	}
 
-	
 	// implementation to the abstract method from the super class (required)
 	@Override
 	public float getTotalSalary()
@@ -55,11 +49,9 @@ public class Technical extends Staff
 		return getBaseSalary() + (getWorkDays() * 20);
 	}
 
-	
 	@Override
 	public String toString()
 	{
 		return String.format("%s%n%n%s%n%s: %d%n%s: %d%n%s: %.2f", super.toString(), "This technical object has: ", "The floor number", getFloorNumber(), "Number of labs", getLabsNumber(), "Total salary", getTotalSalary());
 	}
-
 }

@@ -10,14 +10,6 @@ public class Worker extends Staff
 	}
 	
 	
-	// constructor with arguments
-	public Worker(String fullName, String nationalNumber, String loginSecurityNumber, String department)
-	{
-		super(fullName, nationalNumber, loginSecurityNumber);
-		this.department = department;
-	}
-	
-	
 	// to set the department where the worker work
 	public void setDepartment(String department)
 	{
@@ -41,17 +33,4 @@ public class Worker extends Staff
 	{
 		return String.format("%s%n%n%s%n%s: %s%n%s: %.2f", super.toString(), "This worker  object has", "The department", getDepartment(), "The total salary", getTotalSalary());
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }

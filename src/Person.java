@@ -13,7 +13,6 @@ public abstract class Person
 		
 	} // end of constructor
 	
-	
 	// return the name
 	public String getFullName()
 	{
@@ -54,13 +53,10 @@ public abstract class Person
 		return address;
 	}
 	
-	
 	// overriding toString method to return appropriate string representation of Person object
 	@Override
 	public String toString()
 	{
 		return String.format("%s%n%s: %s%n%s: %d%n%s: %s%n%s: %s","The data of this Person object:", "Name", getFullName(),"Age",getAge(),"National number", getNationalNumber(), "Address", getAddress() );
 	}
-	
-	
 }// end of abstract class person
