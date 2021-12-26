@@ -74,22 +74,22 @@ public class Test
 			if(key == '1')
 			{
 				System.out.println("Enter the student name");
-				studentName = input.nextLine();
+				studentName = input.next();
 				System.out.println("-------------------------------");
 				System.out.println("Enter the student national number");
-				studentNationalNumber= input.nextLine();
+				studentNationalNumber= input.next();
 				System.out.println("-------------------------------");
 				System.out.println("Enter the student age");
 				studentAge= input.nextInt();
 				System.out.println("-------------------------------");
 				System.out.println("Enter the student address");
-				studentAddress = input.nextLine();
+				studentAddress = input.next();
 				System.out.println("-------------------------------");
 				System.out.println("Enter the student gpa");
 				studentGpa= input.nextDouble();
 				System.out.println("-------------------------------");
 				System.out.println("Enter the student acadimic number");
-				studentAcadimicNumber = input.nextLine();
+				studentAcadimicNumber = input.next();
 				System.out.println("-------------------------------");
 				System.out.println("Enter the student acadimic mail");
 				studentAcadimicMail = input.nextLine();
@@ -99,8 +99,13 @@ public class Test
 				s1.setAge(studentAge);
 				s1.setGpa(studentGpa);
 				mainMethod.add(s1);
-				System.out.println("Do you to add another Person? if yes press 1 else press any char");
+				System.out.println("Do you to add another Person? if yes press 2 else press any char");
 				continuetyVariable = input.next().charAt(0);
+				
+			}
+			if(continuetyVariable == 2)
+			{
+				continue;
 			}
 			if(key == '2')
 			{
