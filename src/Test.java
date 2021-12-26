@@ -71,7 +71,7 @@ public class Test
 			System.out.println("4 ----> to create Administrator object");
 			System.out.println("5 ----> to create Technical object");
 			key = input.next().charAt(0);
-			if(key == '1')
+			if(key == '1')                             //add student object
 			{
 				System.out.println("Enter the student name");
 				studentName = input.next();
@@ -92,35 +92,36 @@ public class Test
 				studentAcadimicNumber = input.next();
 				System.out.println("-------------------------------");
 				System.out.println("Enter the student acadimic mail");
-				studentAcadimicMail = input.nextLine();
+				studentAcadimicMail = input.next();
 				System.out.println("-------------------------------");
 				Student s1 = new Student(studentName, studentNationalNumber, studentAcadimicNumber, studentAcadimicMail);
 				s1.setAddress(studentAddress);
 				s1.setAge(studentAge);
 				s1.setGpa(studentGpa);
 				mainMethod.add(s1);
-				System.out.println("Do you to add another Person? if yes press 2 else press any char");
-				continuetyVariable = input.next().charAt(0);
+//				System.out.println("Do you to add another Person? if yes press 2 else press any char");
+//				continuetyVariable = input.next().charAt(0);
 				
 			}
-			if(continuetyVariable == 2)
-			{
-				continue;
-			}
-			if(key == '2')
+//			if(continuetyVariable == 2)
+//			{
+//				continue;
+//			}
+			
+			if(key == '2')                       //add worker object
 			{
 				System.out.println("Enter the worker name");
-				workerName = input.nextLine();
+				workerName = input.next();
 				System.out.println("Enter the worker national number");
-				workerNationalNumber= input.nextLine();
+				workerNationalNumber= input.next();
 				System.out.println("Enter the worker age");
 				workerAge= input.nextInt();
 				System.out.println("Enter the worker address");
-				workerAddress = input.nextLine();
+				workerAddress = input.next();
 				System.out.println("Enter the worker department");
-				workerDepartment= input.nextLine();
+				workerDepartment= input.next();
 				System.out.println("Enter the worker login security number");
-				workerLoginSecurityNumber = input.nextLine();
+				workerLoginSecurityNumber = input.next();
 				System.out.println("Enter the worker work days");
 				workerWorkDays = input.nextInt();
 				System.out.println("Enter the worker salary");
@@ -135,20 +136,21 @@ public class Test
 				System.out.println("Do you to add another Person? if yes press 1 else press any char");
 				continuetyVariable = input.next().charAt(0);
 			}
-			if(key == '3')
+			
+			if(key == '3')                        //add instructor object 
 			{
 				System.out.println("Enter the instructor name");
-				instructorName = input.nextLine();
+				instructorName = input.next();
 				System.out.println("Enter the instructor national number");
-				instructorNationalNumber= input.nextLine();
+				instructorNationalNumber= input.next();
 				System.out.println("Enter the instructor age");
 				instructorAge= input.nextInt();
 				System.out.println("Enter the instructor address");
-				instructorAddress = input.nextLine();
+				instructorAddress = input.next();
 				System.out.println("Enter the instructor login security number");
-				instructorLoginSecurityNumber = input.nextLine();
+				instructorLoginSecurityNumber = input.next();
 				System.out.println("Enter the instructor department");
-				instructorDepartment= input.nextLine();
+				instructorDepartment= input.next();
 				System.out.println("Enter the worker work days");
 				instructorWorkDays = input.nextInt();
 				System.out.println("Enter the instructor salary");
