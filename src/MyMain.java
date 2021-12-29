@@ -172,16 +172,14 @@ public class MyMain
 								x.setAge(studentAge);
 								x.setGpa(studentGpa);
 								students.add(x);
-								
+								break;
 							}
 							catch(Exception e)
 							{
 								System.out.println("This data isn't available!");
-							}
-							
+							}		
 						}
 					}
-					
 					break;
 					
 					
@@ -209,8 +207,7 @@ public class MyMain
 								System.out.println("This student isn't found");
 							}
 						}
-					}
-					catch(Exception e)
+					}catch(Exception e)
 					{
 						System.out.println("This data isn't available!");
 					}
