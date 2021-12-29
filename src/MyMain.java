@@ -141,14 +141,47 @@ public class MyMain
 					
 				//editing	
 				case '4':
-					try
+					System.out.println("Enter the national number: ");
+					String ssNationalNumber = input.next();
+					for(int i = 0; i < students.size(); i++)
 					{
-						
+						Student x = students.get(i);
+						if(x.getNationalNumber() == ssNationalNumber)
+						{
+							try
+							{ 
+								System.out.println("Please enter the new name:");
+								input.nextLine();
+								studentName = input.nextLine();
+								System.out.println("Enter the new national number:");
+								studentNationalNumber = input.nextLine();
+								System.out.println("Enter the new age:");
+								studentAge = input.nextInt();
+								System.out.println("Enter the new address:");
+								input.nextLine();
+								studentAddress = input.nextLine();
+								System.out.println("Enter the new gpa:");
+								studentGpa = input.nextDouble();
+								System.out.println("Enter the new acadimic number:");
+								input.nextLine();
+								studentAcadimicNumber = input.nextLine();
+								System.out.println("Enter the new acadimic mail:");
+								studentAcadimicMail = input.nextLine();
+							    x = new Student(studentName, studentNationalNumber, studentAcadimicNumber, studentAcadimicMail);
+								x.setAddress(studentAddress);
+								x.setAge(studentAge);
+								x.setGpa(studentGpa);
+								students.add(x);
+								
+							}
+							catch(Exception e)
+							{
+								System.out.println("This data isn't available!");
+							}
+							
+						}
 					}
-					catch(Exception e)
-					{
-						System.out.println("This data isn't available!");
-					}
+					
 					break;
 					
 					
@@ -186,6 +219,7 @@ public class MyMain
 					default:
 						System.out.println("Sorry, you entered an invalid number");
 					
+						
 					}// end of student tasks
 			    
 				}//end of student
