@@ -81,10 +81,7 @@ public class MyMain
 						s1.setAddress(studentAddress);
 						s1.setAge(studentAge);
 						s1.setGpa(studentGpa);
-						students.add(s1);
-
-						System.out.println(s1);                 // test the information
-					
+						students.add(s1);					
 					}
 					catch(Exception e)
 					{
@@ -99,6 +96,7 @@ public class MyMain
 					}
 					break;
 				
+					
 				//removing	
 				case '2':
 					try
@@ -118,10 +116,11 @@ public class MyMain
 					}
 					catch(Exception e)
 					{
-						System.out.println("Wrong Data");
+						System.out.println("This data isn't available!");
 					}
+					break;
 					
-				
+					
 				//Show all students
 				case '3': 
 					try
@@ -131,24 +130,67 @@ public class MyMain
 							Student x = students.get(i);
 							System.out.println(x);
 						}
+						break;
 					}
 					catch(Exception e)
 					{
-						System.out.println("Wrong data!");
+						System.out.println("This data isn't available!");
 					}
+					break;
 					
 					
+				//editing	
+				case '4':
+					try
+					{
+						
+					}
+					catch(Exception e)
+					{
+						System.out.println("This data isn't available!");
+					}
+					break;
 					
 					
+				// searching
+				case '5':
+					try
+					{
+						System.out.println("Enter the national number");
+						String sNationalNumber = input.next();
+						boolean checking = false;
+						for(int i = 0; i < students.size(); i++)
+						{
+							Student x = students.get(i);
+							if(x.getNationalNumber() == sNationalNumber)
+							{
+								System.out.println(x);
+								checking = true;
+							}
+							else
+							{
+								checking = false;
+							}
+							if (checking == false)
+							{
+								System.out.println("This student isn't found");
+							}
+						}
+					}
+					catch(Exception e)
+					{
+						System.out.println("This data isn't available!");
+					}
+					break;
 					
+					default:
+						System.out.println("Sorry, you entered an invalid number");
 					
-
-							
-				   }// end of student tasks
+					}// end of student tasks
 			    
-			}//end of student
+				}//end of student
 		
-		}// end of while loop	
+			}// end of while loop	
 
 	}// end of main
 
