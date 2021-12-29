@@ -52,7 +52,7 @@ public abstract class Staff extends Person
 	
 	
 	// abstract method each subclass overrides it to calculate the appropriate total salary 
-	public abstract float getTotalSalary();
+	//public abstract float getTotalSalary();
 	
 	
 	@Override

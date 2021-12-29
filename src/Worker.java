@@ -1,5 +1,5 @@
 
-public class Worker extends Staff
+public class Worker extends Staff implements StaffInterface
 {
 	private String department;
 	

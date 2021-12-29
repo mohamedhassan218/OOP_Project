@@ -1,5 +1,5 @@
 
-public class Adminnistrator extends Staff
+public class Adminnistrator extends Staff implements StaffInterface
 {
 	private int numberOfOfficers;
 	private String department;

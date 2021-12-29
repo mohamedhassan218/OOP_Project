@@ -1,5 +1,5 @@
 
-public class Technical extends Staff 
+public class Technical extends Staff implements StaffInterface
 {
 	private int floorNumber;
 	private int labsNumber;

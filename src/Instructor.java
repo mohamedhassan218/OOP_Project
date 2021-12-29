@@ -1,5 +1,5 @@
 
-public class Instructor extends Staff
+public class Instructor extends Staff implements StaffInterface 
 {
 	private final String department;
 	private int hours;
