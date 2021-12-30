@@ -32,6 +32,7 @@ public class Testing {
 		System.out.println(w1);
 		System.out.println("*************************************************************************");
 		
+		//take technical object
 		Technical t1 = new Technical("Ferjane Sasi", "20541258745559", "333-33-3333");
 		t1.setAddress("Golta");
 		t1.setAge(22);
