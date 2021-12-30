@@ -49,6 +49,16 @@ public class MyMain
 		int technicalFloorNumber;
 		int technicalLabsNumber;
 		
+		//worker attributes
+		String workerName;
+		String workerNationalNumber;
+		int workerAge;
+		String workerAddress;
+		String workerLoginSecurityNumber;
+		int workerWorkDays;
+		float workerSalary;
+		String workerDepartment;
+		
 		
 		Scanner input = new Scanner(System.in);
 		
@@ -668,6 +678,211 @@ public class MyMain
 						}// end of technician tasks
 			    
 				}//end of technician
+			
+			if(personType == '4')                         //Worker
+			{// start of worker
+				
+				System.out.println("To add --> 1");
+				System.out.println("To remove --> 2");
+				System.out.println("To show information --> 3");
+				System.out.println("To edit --> 4");
+				System.out.println("To search --> 5");
+				
+				taskType = input.next().charAt(0);
+				
+				switch(taskType)
+				{// start of worker tasks
+				
+				//adding
+				case '1':
+					try 
+					{
+						System.out.print("The name: ");
+						input.nextLine();
+						workerName = input.nextLine();
+						System.out.print("The national number: ");
+						workerNationalNumber = input.nextLine();
+						System.out.print("The login security number: ");
+						workerLoginSecurityNumber = input.next();
+						System.out.print("The department: ");
+						//input.nextLine();
+						workerDepartment = input.next();
+						System.out.print("The age: ");
+						workerAge = input.nextInt();
+						System.out.print("The address: ");
+						input.nextLine();
+						workerAddress = input.nextLine();
+						System.out.print("The salary: ");
+						workerSalary = input.nextFloat();
+						System.out.print("The work days: ");
+						input.nextLine();
+						workerWorkDays = input.nextInt();
+						Worker w1 = new Worker(workerName, workerNationalNumber, workerLoginSecurityNumber);
+						w1.setAddress(workerAddress);
+						w1.setAge(workerAge);
+						w1.setWorkDays(workerWorkDays);
+						w1.setDepartment(workerDepartment);
+						w1.setBaseSalary(workerSalary);
+						workers.add(w1);					
+					}
+					catch(Exception e)
+					{
+						System.out.println("Invalid Data");
+					}
+					System.out.println("If you want to exit enter '0' else enter any char!");
+					whileKeyInt = input.nextInt();
+					if(whileKeyInt == 0)
+					{
+						whileKey = false;
+					}
+					break;
+				
+					
+				//removing	
+				case '2':
+					try
+					{
+						System.out.println("Enter the national number of the technical who you want to remove: ");
+						String tNationalNumber = input.next();
+						for(int i =0; i < technicals.size(); i++)
+						{
+							Technical x = technicals.get(i);
+							if(x.getNationalNumber() == tNationalNumber)
+							{
+								technicals.remove(x);
+								break;
+							}
+						}
+						System.out.println("Technical information has been removed. ");
+					}
+					catch(Exception e)
+					{
+						System.out.println("This data isn't available!");
+					}
+					System.out.println("If you want to exit enter '0' else enter any char!");
+					whileKeyInt = input.nextInt();
+					if(whileKeyInt == 0)
+					{
+						whileKey = false;
+					}
+					break;
+					
+					
+				//Show all students
+				case '3': 
+					try
+					{
+						for(int i =0; i < technicals.size(); i++)
+						{
+							Technical x = technicals.get(i);
+							System.out.println(x);
+						}
+						break;
+					}
+					catch(Exception e)
+					{
+						System.out.println("This data isn't available!");
+					}
+					System.out.println("If you want to exit enter '0' else enter any char!");
+					whileKeyInt = input.nextInt();
+					if(whileKeyInt == 0)
+					{
+						whileKey = false;
+					}
+					break;
+					
+					
+				//editing	
+				case '4':
+					System.out.println("Enter the national number: ");
+					String tNationalNumber = input.next();
+					for(int i = 0; i < technicals.size(); i++)
+					{
+						Technical x = technicals.get(i);
+						if(x.getNationalNumber() == tNationalNumber)
+						{
+							try
+							{ 
+								// user can't edit name, national number or login security number
+								System.out.println("Enter the new age:");
+								technicalAge = input.nextInt();
+								System.out.println("Enter the new address:");
+								input.nextLine();
+								technicalAddress = input.nextLine();
+								System.out.println("Enter the new salary:");
+								technicalSalary = input.nextFloat();
+								System.out.println("Enter the new work days:");
+								technicalWorkDays= input.nextInt();
+								System.out.println("Enter the new floor number:");
+								technicalFloorNumber = input.nextInt();
+								System.out.println("Enter the new labs number:");
+								technicalLabsNumber = input.nextInt();
+								x.setAddress(technicalAddress);
+								x.setAge(technicalAge);
+								x.setBaseSalary(technicalSalary);
+								x.setWorkDays(technicalWorkDays);
+								x.setLabsNumber(technicalLabsNumber);
+								x.setFloorNumber(technicalFloorNumber);								
+								technicals.add(x);
+								break;
+							}
+							catch(Exception e)
+							{
+								System.out.println("This data isn't available!");
+							}		
+						}
+					}
+					System.out.println("If you want to exit enter '0' else enter any char!");
+					whileKeyInt = input.nextInt();
+					if(whileKeyInt == 0)
+					{
+						whileKey = false;
+					}
+					break;
+					
+					
+				// searching
+				case '5':
+					try
+					{
+						System.out.println("Enter the national number");
+						String ttNationalNumber = input.next();
+						boolean checking = false;
+						for(int i = 0; i < technicals.size(); i++)
+						{
+							Technical x = technicals.get(i);
+							if(x.getNationalNumber() == ttNationalNumber)
+							{
+								System.out.println(x);
+								checking = true;
+							}
+							else
+							{
+								checking = false;
+							}
+							if (checking == false)
+							{
+								System.out.println("This technical isn't found");
+							}
+						}
+					}catch(Exception e)
+					{
+						System.out.println("This data isn't available!");
+					}
+					System.out.println("If you want to exit enter '0' else enter any char!");
+					whileKeyInt = input.nextInt();
+					if(whileKeyInt == 0)
+					{
+						whileKey = false;
+					}
+					break;
+					
+					default:
+						System.out.println("Sorry, you entered an invalid number");
+						}// end of worker tasks
+			    
+				}//end of worker
+			
 			
 			
 		
