@@ -59,6 +59,18 @@ public class MyMain
 		float workerSalary;
 		String workerDepartment;
 		
+		//administrator attributes
+		String administratorName;
+		String administratorNationalNumber;
+		int administratorAge;
+		String administratorAddress;
+		String administratorLoginSecurityNumber;
+		int administratorWorkDays;
+		float administratorSalary;
+		String administratorDepartment;
+		int administratorNumberOfOfficers;
+		
+		
 		
 		Scanner input = new Scanner(System.in);
 		
@@ -742,18 +754,18 @@ public class MyMain
 				case '2':
 					try
 					{
-						System.out.println("Enter the national number of the technical who you want to remove: ");
-						String tNationalNumber = input.next();
-						for(int i =0; i < technicals.size(); i++)
+						System.out.println("Enter the national number of the worker who you want to remove: ");
+						String wNationalNumber = input.next();
+						for(int i =0; i < workers.size(); i++)
 						{
-							Technical x = technicals.get(i);
-							if(x.getNationalNumber() == tNationalNumber)
+							Worker x = workers.get(i);
+							if(x.getNationalNumber() == wNationalNumber)
 							{
-								technicals.remove(x);
+								workers.remove(x);
 								break;
 							}
 						}
-						System.out.println("Technical information has been removed. ");
+						System.out.println("Worker information has been removed. ");
 					}
 					catch(Exception e)
 					{
@@ -772,9 +784,9 @@ public class MyMain
 				case '3': 
 					try
 					{
-						for(int i =0; i < technicals.size(); i++)
+						for(int i =0; i < workers.size(); i++)
 						{
-							Technical x = technicals.get(i);
+							Worker x = workers.get(i);
 							System.out.println(x);
 						}
 						break;
@@ -795,35 +807,32 @@ public class MyMain
 				//editing	
 				case '4':
 					System.out.println("Enter the national number: ");
-					String tNationalNumber = input.next();
-					for(int i = 0; i < technicals.size(); i++)
+					String wNationalNumber = input.next();
+					for(int i = 0; i < workers.size(); i++)
 					{
-						Technical x = technicals.get(i);
-						if(x.getNationalNumber() == tNationalNumber)
+						Worker x = workers.get(i);
+						if(x.getNationalNumber() == wNationalNumber)
 						{
 							try
 							{ 
 								// user can't edit name, national number or login security number
 								System.out.println("Enter the new age:");
-								technicalAge = input.nextInt();
+								workerAge = input.nextInt();
 								System.out.println("Enter the new address:");
 								input.nextLine();
-								technicalAddress = input.nextLine();
+								workerAddress = input.nextLine();
 								System.out.println("Enter the new salary:");
-								technicalSalary = input.nextFloat();
+								workerSalary = input.nextFloat();
 								System.out.println("Enter the new work days:");
-								technicalWorkDays= input.nextInt();
-								System.out.println("Enter the new floor number:");
-								technicalFloorNumber = input.nextInt();
-								System.out.println("Enter the new labs number:");
-								technicalLabsNumber = input.nextInt();
-								x.setAddress(technicalAddress);
-								x.setAge(technicalAge);
-								x.setBaseSalary(technicalSalary);
-								x.setWorkDays(technicalWorkDays);
-								x.setLabsNumber(technicalLabsNumber);
-								x.setFloorNumber(technicalFloorNumber);								
-								technicals.add(x);
+								workerWorkDays= input.nextInt();
+								System.out.println("Enter the new department:");
+								workerDepartment = input.next();
+								x.setAddress(workerAddress);
+								x.setAge(workerAge);
+								x.setBaseSalary(workerSalary);
+								x.setWorkDays(workerWorkDays);
+								x.setDepartment(workerDepartment);								
+								workers.add(x);
 								break;
 							}
 							catch(Exception e)
@@ -846,12 +855,12 @@ public class MyMain
 					try
 					{
 						System.out.println("Enter the national number");
-						String ttNationalNumber = input.next();
+						String wwNationalNumber = input.next();
 						boolean checking = false;
-						for(int i = 0; i < technicals.size(); i++)
+						for(int i = 0; i < workers.size(); i++)
 						{
-							Technical x = technicals.get(i);
-							if(x.getNationalNumber() == ttNationalNumber)
+							Worker x = workers.get(i);
+							if(x.getNationalNumber() == wwNationalNumber)
 							{
 								System.out.println(x);
 								checking = true;
@@ -862,7 +871,7 @@ public class MyMain
 							}
 							if (checking == false)
 							{
-								System.out.println("This technical isn't found");
+								System.out.println("This worker isn't found");
 							}
 						}
 					}catch(Exception e)
@@ -879,12 +888,218 @@ public class MyMain
 					
 					default:
 						System.out.println("Sorry, you entered an invalid number");
-						}// end of worker tasks
+					}// end of worker tasks
 			    
 				}//end of worker
 			
 			
-			
+			if(personType == '5')                         //administrator
+			{// start of administrator
+				
+				System.out.println("To add --> 1");
+				System.out.println("To remove --> 2");
+				System.out.println("To show information --> 3");
+				System.out.println("To edit --> 4");
+				System.out.println("To search --> 5");
+				
+				taskType = input.next().charAt(0);
+				
+				switch(taskType)
+				{// start of administrator tasks
+				
+				//adding
+				case '1':
+					try 
+					{
+						System.out.print("The name: ");
+						input.nextLine();
+						administratorName = input.nextLine();
+						System.out.print("The national number: ");
+						administratorNationalNumber = input.nextLine();
+						System.out.print("The login security number: ");
+						administratorLoginSecurityNumber = input.next();
+						System.out.print("The department: ");
+						//input.nextLine();
+						administratorDepartment = input.next();
+						System.out.print("The age: ");
+						administratorAge = input.nextInt();
+						System.out.print("The address: ");
+						input.nextLine();
+						administratorAddress = input.nextLine();
+						System.out.print("The salary: ");
+						administratorSalary = input.nextFloat();
+						System.out.print("The work days: ");
+						input.nextLine();
+						administratorWorkDays = input.nextInt();
+						System.out.print("The number of officers: ");
+						administratorNumberOfOfficers = input.nextInt();
+						
+						Adminnistrator a1 = new Adminnistrator(administratorName, administratorNationalNumber, administratorLoginSecurityNumber);
+						a1.setAddress(administratorAddress);
+						a1.setAge(administratorAge);
+						a1.setWorkDays(administratorWorkDays);
+						a1.setDepartment(administratorDepartment);
+						a1.setBaseSalary(administratorSalary);
+						a1.setNumberOfOfficers(administratorNumberOfOfficers);
+						adminnistrators.add(a1);					
+					}
+					catch(Exception e)
+					{
+						System.out.println("Invalid Data");
+					}
+					System.out.println("If you want to exit enter '0' else enter any char!");
+					whileKeyInt = input.nextInt();
+					if(whileKeyInt == 0)
+					{
+						whileKey = false;
+					}
+					break;
+				
+					
+				//removing	
+				case '2':
+					try
+					{
+						System.out.println("Enter the national number of the administrator who you want to remove: ");
+						String aNationalNumber = input.next();
+						for(int i =0; i < adminnistrators.size(); i++)
+						{
+							Adminnistrator x = adminnistrators.get(i);
+							if(x.getNationalNumber() == aNationalNumber)
+							{
+								adminnistrators.remove(x);
+								break;
+							}
+						}
+						System.out.println("Administrator information has been removed. ");
+					}
+					catch(Exception e)
+					{
+						System.out.println("This data isn't available!");
+					}
+					System.out.println("If you want to exit enter '0' else enter any char!");
+					whileKeyInt = input.nextInt();
+					if(whileKeyInt == 0)
+					{
+						whileKey = false;
+					}
+					break;
+					
+					
+				//Show all students
+				case '3': 
+					try
+					{
+						for(int i =0; i < adminnistrators.size(); i++)
+						{
+							Adminnistrator x = adminnistrators.get(i);
+							System.out.println(x);
+						}
+						break;
+					}
+					catch(Exception e)
+					{
+						System.out.println("This data isn't available!");
+					}
+					System.out.println("If you want to exit enter '0' else enter any char!");
+					whileKeyInt = input.nextInt();
+					if(whileKeyInt == 0)
+					{
+						whileKey = false;
+					}
+					break;
+					
+					
+				//editing	
+				case '4':
+					System.out.println("Enter the national number: ");
+					String aNationalNumber = input.next();
+					for(int i = 0; i < adminnistrators.size(); i++)
+					{
+						Adminnistrator x = adminnistrators.get(i);
+						if(x.getNationalNumber() == aNationalNumber)
+						{
+							try
+							{ 
+								// user can't edit name, national number or login security number
+								System.out.println("Enter the new age:");
+								administratorAge = input.nextInt();
+								System.out.println("Enter the new address:");
+								input.nextLine();
+								administratorAddress = input.nextLine();
+								System.out.println("Enter the new salary:");
+								administratorSalary = input.nextFloat();
+								System.out.println("Enter the new work days:");
+								administratorWorkDays= input.nextInt();
+								System.out.println("Enter the new department:");
+								administratorDepartment = input.next();
+								System.out.println("Enter the new number of officers:");
+								administratorNumberOfOfficers = input.nextInt();
+								x.setAddress(administratorAddress);
+								x.setAge(administratorAge);
+								x.setBaseSalary(administratorSalary);
+								x.setWorkDays(administratorWorkDays);
+								x.setDepartment(administratorDepartment);	
+								x.setNumberOfOfficers(administratorNumberOfOfficers);
+								adminnistrators.add(x);
+								break;
+							}
+							catch(Exception e)
+							{
+								System.out.println("This data isn't available!");
+							}		
+						}
+					}
+					System.out.println("If you want to exit enter '0' else enter any char!");
+					whileKeyInt = input.nextInt();
+					if(whileKeyInt == 0)
+					{
+						whileKey = false;
+					}
+					break;
+					
+					
+				// searching
+				case '5':
+					try
+					{
+						System.out.println("Enter the national number");
+						String aaNationalNumber = input.next();
+						boolean checking = false;
+						for(int i = 0; i < adminnistrators.size(); i++)
+						{
+							Adminnistrator  x = adminnistrators.get(i);
+							if(x.getNationalNumber() == aaNationalNumber)
+							{
+								System.out.println(x);
+								checking = true;
+							}
+							else
+							{
+								checking = false;
+							}
+							if (checking == false)
+							{
+								System.out.println("This administrators isn't found");
+							}
+						}
+					}catch(Exception e)
+					{
+						System.out.println("This data isn't available!");
+					}
+					System.out.println("If you want to exit enter '0' else enter any char!");
+					whileKeyInt = input.nextInt();
+					if(whileKeyInt == 0)
+					{
+						whileKey = false;
+					}
+					break;
+					
+					default:
+						System.out.println("Sorry, you entered an invalid number");
+					}// end of administrator tasks
+			    
+				}//end of administrator
 		
 			}// end of while loop	
 
