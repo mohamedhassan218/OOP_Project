@@ -508,6 +508,7 @@ public class MyMain
 						t1.setFloorNumber(technicalFloorNumber);
 						t1.setWorkDays(technicalWorkDays);
 						t1.setBaseSalary(technicalSalary);
+						t1.setLabsNumber(technicalLabsNumber);
 						technicals.add(t1);					
 					}
 					catch(Exception e)
